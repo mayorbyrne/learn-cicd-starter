@@ -16,7 +16,7 @@ func TestGetAPIKey(t *testing.T) {
 	auth, err := GetAPIKey(header)
 
 	// we should have an ErrNoAuthHeaderIncluded error
-	if auth == "" {
+	if auth != "" {
 		t.Fatalf("expected: empty string, got: %s", auth)
 	}
 	// and the error should be ErrNoAuthHeaderIncluded
